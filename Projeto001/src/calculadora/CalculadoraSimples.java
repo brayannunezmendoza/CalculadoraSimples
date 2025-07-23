@@ -9,6 +9,9 @@ import java.util.Scanner;
 public class CalculadoraSimples {
 
     public CalculadoraSimples() {
+        double n1 = 0;
+        double n2;
+        int e;
         int es;
         boolean continuar = true;
         Scanner sc = new Scanner(System.in);
@@ -16,29 +19,21 @@ public class CalculadoraSimples {
         try {
             do {
                 System.out.println("Digite o primeiro numero para a operação");
-                double n1 = sc.nextDouble();
+                n1 = sc.nextDouble();
                 System.out.println("Digite o segundo numero para a operação");
-                double n2 = sc.nextDouble();
-
+                n2 = sc.nextDouble();
                 System.out.println("Escolha a operação desejada");
                 System.out.println("(1)soma\n(2)subtração\n(3)multiplicação\n(4)divisão");
-                int e = sc.nextInt();
+                e = sc.nextInt();
                 switch (e) {
-                    case 1:
-                        System.out.println("Resultado: " + (n1 + n2));
-                        break;
-                    case 2:
-                        System.out.println("Resultado: " + (n1 - n2));
-                        break;
-                    case 3:
-                        System.out.println("Resultado: " + (n1 * n2));
-                        break;
-                    case 4:
-                        System.out.println("Resultado: " + (n1 / n2));
-                        break;
-                    default:
+                    case 1 -> System.out.println("Resultado: " + (n1 + n2));
+                    case 2 -> System.out.println("Resultado: " + (n1 - n2));
+                    case 3 -> System.out.println("Resultado: " + (n1 * n2));
+                    case 4 -> System.out.println("Resultado: " + (n1 / n2));
+                    default -> {
                         System.out.println("Opção não listada");
                         System.out.println("Operação finalizada");
+                    }
                 }
                 System.out.println("Recomeçar?\n(1)Sim\n(2)Não");
                 es = sc.nextInt();
@@ -54,11 +49,8 @@ public class CalculadoraSimples {
                 }
             } while (continuar);
         } catch (Exception InputMismatchException) {
-            System.out.println("Apenas numeros");
+            System.out.println("Apenas numeros\nO processo será finalizado");
         }
-
         sc.close();
-
     }
-
 }
