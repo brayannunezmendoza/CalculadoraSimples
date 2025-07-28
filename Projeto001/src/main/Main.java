@@ -1,14 +1,12 @@
-
 package main;
 
 /**
  *
  * @author brayan
  */
-import calculadora.CalculadoraSimples;
+import view.*;
 public class Main {
     public static void main(String[] args) {
-        CalculadoraSimples cl = new CalculadoraSimples();
+        new View();
     }
-    
 }
